@@ -1,0 +1,112 @@
+{
+    "dir": "ltr",
+    "lang": "English",
+    "name": "Jonathan Guenther's Github Page",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "https://jonguenther.github.io/",
+    "short_name": "Jon's Github",
+    "theme_color": "transparent",
+    "description": "Jonathan Guenther's Github page",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/5374d065-4a22-8a85-1a25-c8d00b8abe67.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/90fec0a8-55e7-e74b-7794-6f88b5879d17.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/617c8b26-a2ec-1a61-1256-60a23b02db83.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/5f07ab2b-390f-12f8-6852-94fa54c47d9f.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e083fa2d-ef60-cdc4-75b7-18ee180dd148.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/7986eb63-9dc1-5d9f-86c8-b417314d182b.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/0f4d8935-a6d5-1d25-91da-d05bb4ad32f1.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/6063ea9b-083e-4ee6-0b4a-f12f4a47a2e8.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/06a20786-6584-91c2-364e-20a2a0929966.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/748cba7a-1755-5bba-7dfe-fe309d2adffa.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/cff14a15-0313-d979-3465-564223b17177.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/36de6a3d-49a8-9832-b453-f021a37b568b.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/804fb772-a59b-5f74-d7e1-9e9510634192.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/0a8c1ebe-1287-6b03-2f5d-dbc997651649.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e5bbd01d-18ef-8178-2b7a-cdc882c66b96.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/27424e4b-2cde-50e2-616f-118b6ee9d8ef.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/0830af43-e728-d156-a701-f1f459f0052f.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/6073399e-e7e2-c0f5-0b99-b054f9fa3a1e.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/8145fd08-78ba-0d8b-733d-410b5e78a493.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}
