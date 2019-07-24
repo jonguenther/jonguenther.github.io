@@ -6,7 +6,7 @@ $(document).ready(function(){
     // on search bar
     $("#search").on("click",function(){
         let url = $('#url').val();
-        let apiURL = "http://localhost:3000/proxy/"
+        let apiURL = "https://prezi2pdf.herokuapp.com/proxy/"
 
         // validate url
         if(url.includes("https://prezi.com") === false){
