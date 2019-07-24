@@ -26,7 +26,7 @@ $(document).ready(function(){
         $.ajax( apiURL + id, {
             type: "POST",
             dataType: 'json',
-            data: {"g-recaptcha-response":capdata},
+            data: JSON.stringify({"g-recaptcha-response":capdata}),
             contentType: "application/json",
         }).done(function( data ) {
             $('#search').prop("disabled",true);
