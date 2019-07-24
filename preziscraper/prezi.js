@@ -7,7 +7,7 @@ $(document).ready(function(){
     $("#search").on("click",function(){
         let url = $('#url').val();
         let apiURL = "https://prezi2pdf.herokuapp.com/proxy/"
-
+        // let apiURL = "http://localhost:3000/proxy/"
         // validate url
         if(url.includes("https://prezi.com") === false){
             return searchError("This is not a valid Prezi URL")
@@ -20,14 +20,14 @@ $(document).ready(function(){
 
         // validate captcha
         let capdata = grecaptcha.getResponse();
-        if(capdata == 0) return   searchError("Captcha not validated!");
-        $('#captcha').fadeOut();
+        if(capdata == 0) return searchError("Captcha not validated!");
+        else $('#captcha').fadeOut();
 
         // request to api
         $.ajax( apiURL + id, {
             type: "POST",
             dataType: 'json',
-            data: JSON.stringify(capdata),
+            data: capdata,
             contentType: "application/json",
         }).done(function( data ) {
             $('#search').prop("disabled",true);
@@ -48,7 +48,6 @@ $(document).ready(function(){
                     statusText("Loading slide " + n);
                 });
                 img.src=slides[i];
-                console.log(i);
             }
 
             // show slides
