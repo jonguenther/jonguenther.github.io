@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+        <style>
+            body,html{
+                height: 100%;
+            }
+            .top {
+                height: 30vh;
+            }
+            .empty {
+                height: 5vh;
+            }
+            .search {
+                height: 10vh;
+            }
+            .out {
+                height: 40vh;
+                overflow-y: auto;
+                overflow-x:hidden;
+                margin-bottom: 3vh;
+            }
+            .decide {
+                height: 7vh;
+            }
+            .foot{
+                height: 10vh;
+                background: black;
+                color: white;
+            }
+            .error{
+                color: red;
+                display: none;
+            }
+            #progress{
+                display: none;
+            }
+            .overlay {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%, -50%);
+                /* color: white; background: #666666; opacity: .8; */
+                z-index: 1000;
+                /* width: 50%; */
+                -webkit-box-shadow: 10px 10px 22px -8px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 22px -8px rgba(0,0,0,0.75);
+                box-shadow: 10px 10px 22px -8px rgba(0,0,0,0.75);
+            }
+            .progressbox{
+                width: 50vw;
+            }
+            .preview{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container top text-center">
+            <div class="empty">
+                
+            </div>
+            <h1>
+                Prezi to PDF Converter
+            </h1>
+            <p><a href="https://github.com/jonguenther/preziscraper">Webscraper Version + Backend Server</a> <div class="d-none d-md-block"><a href="https://github.com/jonguenther/jonguenther.github.io/tree/master/preziscraper">Frontend Source Code</a></div></p>
+            <hr>
+            <div class="d-none d-md-block">
+                <p>
+                        Simply paste the Prezi URL of your presentation you want to convert and click "Load Prezi". You can then choose which slides you want to keep.
+                    <br>
+                        <b>Note:</b> Because of technical limitations you will have to save the export as PDF yourself.
+                    </p>
+            </div>
+        </section>
+        <section class="container search">
+            <div class="input-group mb-3">
+                <input class="form-control form-control-lg" type="text" placeholder="Enter your Prezi URL here" id="url">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="search" type="button">Load Prezi</button>
+                </div>
+            </div>
+            <div class="text-right error" id="searcherror">
+                I am hidden
+            </div>
+        </section>
+        <section class="container out">
+            <div class="row" id="out" style="display: none">
+                <!-- <div class="col-2">
+                    <div class="card" style="width: 8rem;">
+                        <img src="http://lorempixel.com/50/50/" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p>Slide #1</p>
+                            <button type="button" class="btn btn-danger btn-sm btn-block" id="del" >X</button>
+                        </div>
+                    </div>
+                </div> -->
+                    
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LfuP68UAAAAAG7LI-L20x4Qz8lW2LaDGZ1PU0zp" id="captcha"></div>
+        </section>
+        <section class="container decide">
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-lg btn-block" id="convert" style="display:none;font-size: 2vh">Convert to PDF</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-danger btn-lg btn-block" id="reset" style="display:none; font-size: 2vh">Reset</button>
+                </div>
+            </div>
+        </section>
+        <section class="foot text-center">
+                <div class="empty">
+                
+                    </div>
+            Made by Jonathan Guenther
+        </section>
+
+        <!--Overlay-->
+        <div class="overlay" id="progress">
+            <div id="" class="text-center">
+                <div class="card progressbox">
+                        <div class="card-body">
+                                <h3 id="progressText">
+                                        Yo
+                                    </h3>
+                                <div class="progress">
+                                        <div id="progressState" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!--moda-->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="modalimg" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger mod-del del">Delete Slide</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script> -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="prezi.min.js"></script>
+    </body>
+</html>
