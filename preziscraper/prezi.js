@@ -22,12 +22,11 @@ $(document).ready(function(){
         let capdata = grecaptcha.getResponse();
         if(capdata == 0) return searchError("Captcha not validated!");
         else $('#captcha').fadeOut();
-        console.log(capdata);
         // request to api
         $.ajax( apiURL + id, {
             type: "POST",
             dataType: 'json',
-            data: capdata,
+            data: {"g-recaptcha-response":capdata},
             contentType: "application/json",
         }).done(function( data ) {
             $('#search').prop("disabled",true);
