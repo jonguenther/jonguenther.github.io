@@ -22,7 +22,7 @@ $(document).ready(function(){
         let capdata = grecaptcha.getResponse();
         if(capdata == 0) return searchError("Captcha not validated!");
         else $('#captcha').fadeOut();
-
+        console.log(capdata);
         // request to api
         $.ajax( apiURL + id, {
             type: "POST",
