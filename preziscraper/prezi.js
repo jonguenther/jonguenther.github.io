@@ -27,7 +27,7 @@ $(document).ready(function(){
         $.ajax( apiURL + id, {
             type: "POST",
             dataType: 'json',
-            data: capdata,
+            data: JSON.stringify(capdata),
             contentType: "application/json",
         }).done(function( data ) {
             $('#search').prop("disabled",true);
