@@ -10,39 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144482063-2"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144482063-2"></script>
-    <script>
-        // Set to the same value as the web property used on the site
-        var gaProperty = 'UA-144482063-2';
-
-        // Disable tracking if the opt-out cookie exists.
-        var disableStr = 'ga-disable-' + gaProperty;
-        if (document.cookie.indexOf(disableStr + '=true') > -1) {
-            window[disableStr] = true;
-        }
-
-        // Opt-out function
-        function gaOptout() {
-            document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
-            window[disableStr] = true;
-            let x = document.getElementById("gan");
-            x.style ="display:none";
-        }
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-144482063-2');
-    </script>
-
     <title>Prezi to PDF Converter</title>
     <style>
         body,
@@ -126,12 +93,6 @@
 </head>
 
 <body>
-    <div class="float" id="gan" style="display: none">
-        This website uses <a href="https://policies.google.com/technologies/partner-sites">cookies</a> to improve your
-        user experience. If you wish to opt-out, <a href="javascript:gaOptout()">click here</a>. <br>
-        [<a style="font-size: 11px" href="javascript:dismissOpt()" data-toggle="tooltip" data-placement="top"
-            title="By dismissing this message you consent to the cookie use. If you want to revoke your consent you will have to delete the cookies for this website.">Dismiss</a>]
-    </div>
     <section class="container top text-center">
         <div class="empty">
 
@@ -251,17 +212,6 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script> -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="prezi.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            if (document.cookie.indexOf(disableStr) < 0) {
-                $('#gan').fadeIn();
-            }
-        });
-
-        function dismissOpt() {
-            $('#gan').fadeOut();
-        }
-    </script>
 </body>
 
 </html>
